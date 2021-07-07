@@ -67,6 +67,10 @@ flutter:
     - assets/pages/onboard/slider-1.svg
     - assets/pages/onboard/slider-2.svg
     - assets/pages/onboard/slider-3.svg
+    - assets/pages/welcome/welcome.svg
+    - assets/pages/welcome/apple.svg
+    - assets/pages/welcome/facebook.svg
+    - assets/pages/welcome/google.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ui_ux/src/pages/onboard/onboard_controller.dart';
+import 'package:ui_ux/src/routes/routes.dart';
 import 'package:ui_ux/src/utils/colors.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:ui_ux/src/utils/font_styles.dart';
@@ -10,6 +11,17 @@ class OnboardControls extends StatelessWidget {
   const OnboardControls({
     Key key,
   }) : super(key: key);
+
+  void _OnNext(BuildContext context, OnboardController controller) {
+    if (controller.currentPage == 2) {
+      Navigator.pushReplacementNamed(context, Routes.WELCOME);
+    } else {
+      controller.pageController.nextPage(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.linear,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +46,7 @@ class OnboardControls extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  controller.pageController.nextPage(
-                      duration: Duration(milliseconds: 300),
-                      curve: Curves.linear);
+                  this._OnNext(context, controller);
                 },
                 color: primaryColor,
                 borderRadius: BorderRadius.circular(30.0),
