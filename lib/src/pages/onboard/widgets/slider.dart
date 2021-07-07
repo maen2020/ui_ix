@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ui_ux/src/data/models/onboard_item.dart';
 import 'package:ui_ux/src/pages/onboard/onboard_controller.dart';
+import 'package:ui_ux/src/utils/font_styles.dart';
 
 class OnboardSlider extends StatelessWidget {
   const OnboardSlider({Key key}) : super(key: key);
@@ -25,10 +27,7 @@ class OnboardSlider extends StatelessWidget {
                   Text(
                     item.title,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
-                    ),
+                    style: FontStyles.title,
                   ),
                   SizedBox(height: 20.0),
                   Text(

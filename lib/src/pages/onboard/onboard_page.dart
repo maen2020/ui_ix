@@ -16,7 +16,7 @@ class OnboardPage extends StatelessWidget {
     return ChangeNotifierProvider<OnboardController>(
       create: (_) {
         final controller = OnboardController();
-        WidgetsBinding.instance.addPersistentFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           controller.afterFirstLayout();
         });
         return controller;
@@ -27,9 +27,6 @@ class OnboardPage extends StatelessWidget {
             width: double.infinity,
             child: Column(
               children: [
-                Expanded(
-                  child: Container(),
-                ),
                 OnboardSlider(),
                 SizedBox(height: 50.0),
                 OnboardControls(),

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:ui_ux/src/pages/onboard/onboard_controller.dart';
 import 'package:ui_ux/src/utils/colors.dart';
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:ui_ux/src/utils/font_styles.dart';
 
 class OnboardControls extends StatelessWidget {
   const OnboardControls({
@@ -26,7 +27,12 @@ class OnboardControls extends StatelessWidget {
               final double page = controller.currentPage;
               bool isEnd = page % 1 == 0 && page == 2.0;
               return CupertinoButton(
-                child: Text(isEnd ? 'Get Started' : 'Next'),
+                child: Text(
+                  isEnd ? 'Get Started' : 'Next',
+                  style: FontStyles.normal.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
                 onPressed: () {
                   controller.pageController.nextPage(
                       duration: Duration(milliseconds: 300),
